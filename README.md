@@ -16,4 +16,4 @@ I am a **Power BI Developer, Data Analyst, and Database Specialist** with 3+ yea
 4. **Survey & Customer Analytics** — Many-to-many resolution using bridge tables and customer satisfaction dashboards.
 
 ## Live Site
-Visit the live portfolio at: `https://<your-github-username>.github.io`
+Visit the live portfolio at: `https://demeke123.github.io/portifolio/`
