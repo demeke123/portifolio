@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demeke Tamalew | Power BI Developer & Data Analyst</title>
+  <meta name="description" content="Portfolio of Demeke Tamalew — Power BI Developer, Data Analyst, and Database Specialist experienced in DAX, SQL Server, Azure SQL, Python, and Microsoft Fabric." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-alt: #111827;
+      --card: #162033;
+      --card-hover: #1c2942;
+      --border: #26344d;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #f2c811; /* Power BI Gold */
+      --accent-soft: rgba(242, 200, 17, 0.14);
+      --teal: #38bdf8;
+      --teal-soft: rgba(56, 189, 248, 0.12);
+      --green: #34d399;
+      --radius: 14px;
+      --max-w: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-badge {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #0b1120;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      transition: color 0.2s;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 84px 0 64px;
+      background: radial-gradient(circle at 85% 15%, rgba(242, 200, 17, 0.08), transparent 40%),
+                  radial-gradient(circle at 15% 60%, rgba(56, 189, 248, 0.08), transparent 45%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--teal);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b1120;
+    }
+
+    .btn-primary:hover {
+      background: #ffd836;
+    }
+
+    .btn-secondary {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal);
+    }
+
+    /* KPI Card Cluster */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .kpi-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .kpi-value.gold { color: var(--accent); }
+    .kpi-value.teal { color: var(--teal); }
+
+    .kpi-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-card h3 span {
+      color: var(--accent);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      padding: 5px 11px;
+      border-radius: 7px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+    }
+
+    /* Projects */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-3px);
+    }
+
+    .project-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card ul {
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    .project-card li {
+      margin-bottom: 8px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tech-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .exp-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .exp-company {
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .exp-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.84rem;
+      color: var(--muted);
+      background: var(--bg-alt);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .exp-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .exp-card li {
+      margin-bottom: 7px;
+    }
+
+    /* Education & Contact */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 24px;
+    }
+
+    .info-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.94rem;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .copy-btn {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .two-col {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-alt);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+        gap: 16px;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-badge">DT</span>
+        <span>Demeke Tamalew</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="about" style="border-top: none;">
+      <div class="container hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            Data Analyst @ Hatch Africa
+          </div>
+          <h1>Turning Complex Data Into Executive Decisions.</h1>
+          <p class="hero-subtitle">Power BI Developer &bull; Data Analyst &bull; Database Specialist</p>
+          <p class="hero-desc">
+            Business Intelligence and Data Analytics professional with 3+ years of experience building interactive Power BI dashboards, optimized star-schema semantic models, DAX calculations, SQL pipelines, and Python automation—backed by hands-on Microsoft Fabric expertise.
+          </p>
+          <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">Explore BI Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Experience</div>
+            <div class="kpi-value gold">3+ Yrs</div>
+            <div class="kpi-note">BI, SQL &amp; Analytics</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Core Stack</div>
+            <div class="kpi-value teal">Power BI</div>
+            <div class="kpi-note">DAX, M &amp; Semantic Models</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Data Platforms</div>
+            <div class="kpi-value">SQL / Fabric</div>
+            <div class="kpi-note">Lakehouse &amp; Azure SQL</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Education</div>
+            <div class="kpi-value">BSc CS</div>
+            <div class="kpi-note">Wollo University</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Technical Arsenal</span>
+          <h2 class="section-title">Core Competencies &amp; Tools</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3><span>01</span> Business Intelligence &amp; Visualization</h3>
+            <div class="tag-list">
+              <span class="tag">Microsoft Power BI</span>
+              <span class="tag">Power BI Desktop &amp; Service</span>
+              <span class="tag">Interactive Dashboards</span>
+              <span class="tag">KPI Development</span>
+              <span class="tag">Semantic Models</span>
+              <span class="tag">Performance Optimization</span>
+              <span class="tag">Row-Level Security (RLS)</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3><span>02</span> Data Analytics &amp; Modeling</h3>
+            <div class="tag-list">
+              <span class="tag">DAX</span>
+              <span class="tag">Power Query / M</span>
+              <span class="tag">Star Schema Modeling</span>
+              <span class="tag">Time Intelligence</span>
+              <span class="tag">ETL / ELT Workflows</span>
+              <span class="tag">Data Warehousing</span>
+              <span class="tag">Data Validation</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3><span>03</span> SQL &amp; Databases</h3>
+            <div class="tag-list">
+              <span class="tag">SQL Server &amp; SSMS</span>
+              <span class="tag">Azure SQL Database</span>
+              <span class="tag">T-SQL</span>
+              <span class="tag">CTEs &amp; Subqueries</span>
+              <span class="tag">Window Functions</span>
+              <span class="tag">Stored Procedures &amp; Views</span>
+              <span class="tag">Query Optimization</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3><span>04</span> Microsoft Fabric &amp; Cloud</h3>
+            <div class="tag-list">
+              <span class="tag">Microsoft Fabric</span>
+              <span class="tag">Fabric Lakehouse</span>
+              <span class="tag">Fabric Data Warehouse</span>
+              <span class="tag">Data Pipelines</span>
+              <span class="tag">Cloud Data Integration</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3><span>05</span> Programming &amp; Automation</h3>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">API Integration</span>
+              <span class="tag">ETL Automation</span>
+              <span class="tag">Data Processing</span>
+              <span class="tag">Advanced Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Selected Work</span>
+          <h2 class="section-title">Power BI &amp; Data Analytics Projects</h2>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="sales">Sales &amp; Field Ops</button>
+          <button class="filter-btn" data-filter="supply">Production &amp; ERP</button>
+          <button class="filter-btn" data-filter="modeling">Advanced Modeling</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-category="sales modeling">
+            <div>
+              <div class="project-category">Commercial Analytics</div>
+              <h3>Sales Performance &amp; KPI Dashboard</h3>
+              <ul>
+                <li>Built interactive Power BI dashboards tracking sales performance, agent KPIs, order conversion, delivery rates, and pipeline health.</li>
+                <li>Authored dynamic DAX measures for current period, previous period, percentage change, WTD, and YTD time-intelligence analysis.</li>
+                <li>Designed multi-table data models enforcing clean business logic across operational sources.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-pill">Power BI</span>
+              <span class="tech-pill">DAX Time Intelligence</span>
+              <span class="tech-pill">Star Schema</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="supply">
+            <div>
+              <div class="project-category">Supply Chain &amp; ERP</div>
+              <h3>Feed Mill Production &amp; Dispatch Dashboard</h3>
+              <ul>
+                <li>Integrated feed mill production and dispatch datasets into a unified Power BI reporting solution.</li>
+                <li>Analyzed production quantities, feed categories, consumption trends, dispatches, and inventory movements.</li>
+                <li>Connected ERP-related data sources to deliver management-ready operational KPIs.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-pill">Power BI</span>
+              <span class="tech-pill">ERP Data</span>
+              <span class="tech-pill">Power Query / M</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="sales modeling">
+            <div>
+              <div class="project-category">Operational &amp; Field Intelligence</div>
+              <h3>Agent Activity &amp; Mortality Analytics</h3>
+              <ul>
+                <li>Created DAX measures to classify active vs. inactive agents using business-defined activity windows.</li>
+                <li>Developed mortality analytics segmented by DSR and ASM, combining survey data with sales performance.</li>
+                <li>Engineered complex filter-context and time-intelligence calculations for granular drill-downs.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-pill">Complex DAX</span>
+              <span class="tech-pill">Filter Context</span>
+              <span class="tech-pill">RLS Ready</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="modeling sales">
+            <div>
+              <div class="project-category">Customer Experience &amp; Modeling</div>
+              <h3>Survey &amp; Customer Analytics</h3>
+              <ul>
+                <li>Consolidated survey, customer, and DSR datasets into an integrated analytical semantic model.</li>
+                <li>Implemented bridge tables to cleanly resolve many-to-many relationship challenges.</li>
+                <li>Visualized satisfaction scores, dissatisfaction drivers, survey response rates, and field performance.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-pill">Bridge Tables</span>
+              <span class="tech-pill">Data Modeling</span>
+              <span class="tech-pill">Survey Analytics</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Career History</span>
+          <h2 class="section-title">Professional Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Data Analyst</div>
+                <div class="exp-company">Hatch Africa</div>
+              </div>
+              <span class="exp-date">Current Role</span>
+            </div>
+            <ul>
+              <li>Develop and maintain Power BI dashboards, semantic models, KPIs, and DAX measures for sales, operations, feed mill, dispatch, agent performance, and mortality.</li>
+              <li>Build optimized star schemas using DAX, Power Query/M, relationships, and calculated columns.</li>
+              <li>Write and optimize SQL queries in SQL Server, Azure SQL, and SSMS for data extraction, validation, and reporting.</li>
+              <li>Develop ETL/ELT workflows integrating ERP, SQL, Excel, survey, and operational data; support Microsoft Fabric (Lakehouse, Data Warehouse, Data Pipelines).</li>
+              <li>Implement Row-Level Security (RLS), optimize report/DAX performance, and use Python for data processing and automation.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Data Analyst</div>
+                <div class="exp-company">Red Cloud ICT Solution</div>
+              </div>
+              <span class="exp-date">Jan 2025 &ndash; Dec 2025</span>
+            </div>
+            <ul>
+              <li>Developed Power BI dashboards, reports, KPIs, and analytical solutions to guide business decision-making.</li>
+              <li>Used SQL, Python, Excel, and Power BI for end-to-end data extraction, cleaning, transformation, and reporting.</li>
+              <li>Authored SQL queries for retrieval, joins, aggregations, validation, and data-quality analysis.</li>
+              <li>Automated recurring reporting and data-processing tasks using Python and Excel while collaborating with stakeholders.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Data Analyst / Database Officer</div>
+                <div class="exp-company">PurposeBlack ETH</div>
+              </div>
+              <span class="exp-date">Dec 2023 &ndash; Dec 2024</span>
+            </div>
+            <ul>
+              <li>Built analytical reports, dashboards, and datasets supporting business and operational reporting.</li>
+              <li>Executed data extraction, cleaning, transformation, and analysis using SQL, Python, Excel, and Power BI.</li>
+              <li>Performed database analysis, data validation, quality checks, and automated recurring reporting workflows.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">IT Teacher</div>
+                <div class="exp-company">Meskerm Secondary School</div>
+              </div>
+              <span class="exp-date">Nov 2022 &ndash; Dec 2023</span>
+            </div>
+            <ul>
+              <li>Delivered technical instruction covering programming, databases, computer applications, and core IT concepts.</li>
+              <li>Designed practical exercises and learning materials, strengthening technical communication and problem-solving skills.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Contact -->
+    <section id="contact">
+      <div class="container two-col">
+        <div class="info-box">
+          <span class="section-tag">// Education</span>
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 14px;">Academic Background</h2>
+          <p style="font-weight: 700; font-size: 1.08rem;">Bachelor of Science in Computer Science</p>
+          <p style="color: var(--teal); font-weight: 600; margin-bottom: 12px;">Wollo University</p>
+          <p style="color: var(--muted); font-size: 0.94rem;">
+            Strong foundation in database design, algorithms, software programming, and analytical problem-solving applied daily across enterprise BI and SQL environments.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <span class="section-tag">// Get In Touch</span>
+          <h2 class="section-title" style="font-size: 1.5rem;">Contact Information</h2>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>
+                <span>Email</span><br />
+                <a href="mailto:Demeketamalew@gmail.com"><strong>Demeketamalew@gmail.com</strong></a>
+              </div>
+              <button class="copy-btn" onclick="copyText('Demeketamalew@gmail.com', this)">Copy</button>
+            </div>
+            <div class="contact-item">
+              <div>
+                <span>Phone</span><br />
+                <a href="tel:+251909037629"><strong>0909037629</strong></a>
+              </div>
+              <button class="copy-btn" onclick="copyText('0909037629', this)">Copy</button>
+            </div>
+            <div class="contact-item">
+              <div>
+                <span>Links (Update URLs)</span><br />
+                <a href="#" style="color: var(--teal); margin-right: 14px;">LinkedIn &nearr;</a>
+                <a href="#" style="color: var(--teal);">GitHub &nearr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Demeke Tamalew &bull; Power BI Developer &amp; Data Analyst</p>
+    </div>
+  </footer>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Project Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          const categories = card.dataset.category.split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Copy to clipboard helper
+    function copyText(text, button) {
+      navigator.clipboard.writeText(text).then(() => {
+        const original = button.textContent;
+        button.textContent = 'Copied!';
+        setTimeout(() => button.textContent = original, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
